@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RealEstate;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -13,10 +14,13 @@ class HomeController extends Controller
      * eloqent modell!
      * https://laravel.com/docs/8.x/eloquent
      */
+
+
+
     public function listRealEstate()
     {
-        $realEstatesList = null;
-        return view('realestate.index');
+        $data['realEstatesList'] = RealEstate::all();
+        return view('realestate.index',$data);
     }
 
     /**
@@ -27,7 +31,13 @@ class HomeController extends Controller
      */
     public function getRealEstate($id)
     {
-        return view('realestate.details');
+        $data['realEstate'] = NULL;
+     if ($id)
+     {
+         $data['realEstate'] = RealEstate::find($id);
+     }
+     //     dd($data['realEstate']);
+        return view('realestate.details',$data);
     }
 
     /**
