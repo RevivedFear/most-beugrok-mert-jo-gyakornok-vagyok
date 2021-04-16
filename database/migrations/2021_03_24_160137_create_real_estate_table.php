@@ -22,6 +22,7 @@ class CreateRealEstateTable extends Migration
             $table->double('price');
             $table->string('type');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         DB::statement("

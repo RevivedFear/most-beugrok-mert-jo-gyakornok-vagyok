@@ -17,6 +17,10 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'listRealEstate'] )
 
 Route::get('/get-real-estate/{id}', [App\Http\Controllers\HomeController::class, 'getRealEstate'] );
 
-Route::post('/update-real-estate', [App\Http\Controllers\HomeController::class, 'updateRealEstate'] );
+Route::post('/update-real-estate/{id}', [App\Http\Controllers\HomeController::class, 'updateRealEstate'] );
+
+Route::get('/update-real-estate/{id}', [App\Http\Controllers\HomeController::class, 'editRealEstate'] );
 
 Route::get('/delete-real-estate/{id}', [App\Http\Controllers\HomeController::class, 'deleteRealEstate'] );
+
+Route::get('/restore-real-estate/{id}', [App\Http\Controllers\HomeController::class, 'restoreRealEstate'] );

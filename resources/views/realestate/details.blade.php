@@ -17,6 +17,7 @@ Created at: 2021.03.24.
                     Cím:{{ $realEstate->address }}<br></br>
                     Ár:{{ $realEstate->price }}<br></br>
                     Jelleg:{{ $realEstate->type }}<br></br>
+                    <img src="{{ $realEstate->img_uri }}" alt="{{ $realEstate->name }}">
                     <br></br>
                 </div>
         @else

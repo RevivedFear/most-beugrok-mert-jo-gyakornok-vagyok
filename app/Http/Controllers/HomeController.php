@@ -47,16 +47,52 @@ class HomeController extends Controller
      */
     public function updateRealEstate(Request $request)
     {
-        $validator = new Validator($request->all(), []);
 
+        $validator = Validator::make($request->all(),
+            ['name' => 'required|max:255',
+            'description' => 'required|max:255',
+            'address' => 'required|max:255',
+            'price' => 'required',
+            'type' => 'required|max:255']
+    );
+        if ($validator->fails()) {
+            return redirect('update-real-estate/'.$request->id)
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        RealEstate::where('id', $request->id)->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'address' => $request->address,
+            'price' => $request->price,
+            'type' => $request->type
+        ]);
+        return redirect('/');
     }
 
+    public function editRealEstate($id)
+    {
+        $data['realEstate'] = NULL;
+        if ($id)
+        {
+            $data['realEstate'] = RealEstate::find($id);
+        }
+        return view('realestate.edit', $data);
+    }
     /**
      * @param $id
      * azonosito alapjan SOFT delete
      */
     public function deleteRealEstate($id)
     {
+        RealEstate::find($id)->delete();
+        return redirect('/');
+    }
 
+    public function restoreRealEstate($id)
+    {
+        RealEstate::withTrashed()->find($id)->restore();
+        return redirect('/');
     }
 }
