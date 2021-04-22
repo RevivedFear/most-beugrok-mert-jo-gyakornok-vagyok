@@ -18,6 +18,7 @@
         @endif
         <div class="row">
             @if($realEstate)
+                <div class="col-12">
                 <form method="post" action="{{ URL::to("update-real-estate/".$realEstate->id) }}" >
                     @csrf
                     <div class="form-group">
@@ -40,10 +41,10 @@
                         <label>{{__("Leírás:")}}</label>
                         <textarea class="form-control" name="description">{{$realEstate->description}}</textarea>
                     </div>
-
-                    <button type="submit" value="mentes" class="btn btn-primary">mentés</button>
+                    <button type="submit" value="mentes" class="btn btn-primary">Mentés</button>
+                    <a href="{{ URL::to('/')}}" class="btn btn-primary">{{__('Mégse')}}</a>
                 </form>
-
+                </div>
             @endif
         </div>
     </div>
