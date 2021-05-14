@@ -10,6 +10,11 @@ Created at: 2021.03.24.
     <div class="container">
         <div class="jumbotron">
             <h3 class="text-center">Ingatlanok listája</h3>
+            @foreach ($realEstatesList as $realestate)
+            <h2> {{$realestate->name}} </h2>
+
+            @endforeach
+
         </div>
     </div>
 @endsection
