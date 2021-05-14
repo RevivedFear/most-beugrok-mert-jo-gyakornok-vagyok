@@ -41,11 +41,11 @@ class CreateRealEstateTable extends Migration
         ");
 
         DB::statement("
-        insert into real_estate (name,img_uri, description, address,price,type, created_at) values ('pinkyboy', '/images/pinkyboy', 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato.', 'Parádsavár Izabella u. 54.', 2345629742, 'House', CURRENT_TIMESTAMP );
+        insert into real_estate (name,img_uri, description, address,price,type, created_at) values ('pinkyboy', '/images/pinkyboy.PNG', 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato.', 'Parádsavár Izabella u. 54.', 2345629742, 'House', CURRENT_TIMESTAMP );
         ");
 
         DB::statement("
-        insert into real_estate (name,img_uri, description, address,price,type, created_at) values ('zoldfulu', '/images/zoldfulu', 'A Lorem Ipsum egy egyszerû szövegrészlete, szövegutánzata a betûszedõ és nyomdaiparnak. A Lorem Ipsum az 1500-as évek óta standard szövegrészletként szolgált az iparban; mikor egy ismeretlen nyomdász összeállította a betûkészletét és egy példa-könyvet vagy szöveget nyomott papírra, ezt használta. Nem csak 5 évszázadot élt túl, de az elektronikus betûkészleteknél is változatlanul megmaradt. ', 'Fenékpuszta Erzsébet tér 67.', 2345629742, 'Hut', CURRENT_TIMESTAMP );
+        insert into real_estate (name,img_uri, description, address,price,type, created_at) values ('zoldfulu', '/images/zoldfulu.PNG', 'A Lorem Ipsum egy egyszerû szövegrészlete, szövegutánzata a betûszedõ és nyomdaiparnak. A Lorem Ipsum az 1500-as évek óta standard szövegrészletként szolgált az iparban; mikor egy ismeretlen nyomdász összeállította a betûkészletét és egy példa-könyvet vagy szöveget nyomott papírra, ezt használta. Nem csak 5 évszázadot élt túl, de az elektronikus betûkészleteknél is változatlanul megmaradt. ', 'Fenékpuszta Erzsébet tér 67.', 2345629742, 'Hut', CURRENT_TIMESTAMP );
         ");
     }
 
