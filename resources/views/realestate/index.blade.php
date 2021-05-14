@@ -23,7 +23,69 @@ Created at: 2021.03.24.
                     <h1 class="fw-light">Ingatlanok listája</h1>
                     <p class="lead text-muted">A jelenleg elérhető ingatlanok itt megtekinthetőek.</p>
                     <p>
-                        <a href="#" class="btn btn-primary my-2"> ingatlan regisztrálása</a>
+                        <a href="#" class="btn btn-primary my-2" data-toggle="modal" data-target="#exampleModal"> ingatlan regisztrálása</a>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Új ingatlan regisztrálása</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post" action="/create-real-estate">
+                                        @csrf
+                                        <div class="form-group">
+                                            @if ($errors->any())
+                                                <div class="alert alert-danger">
+                                                    <ul>
+                                                        @foreach ($errors->all() as $error)
+                                                            <li>{{ $error }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            @endif
+
+                                            <label for="formGroupExampleInput">Ingatlan neve</label>
+                                            <input type="text" class="form-control" id="ingatlannev" name="ingatlannev" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput2">Ingatlan címe</label>
+                                            <input type="text" class="form-control" id="ingatlancim" name="ingatlancim" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput2">Leírás</label>
+                                            <input type="text" class="form-control" id="ingatlanleiras" name="ingatlanleiras" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput2">Ár</label>
+                                            <input type="text" class="form-control" id="ingatlanar" name="ingatlanar" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput2">kép</label>
+                                            <input type="text" class="form-control" id="ingatlankep" name="ingatlankep" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput2">Tipus</label>
+                                            <label for="formGroupExampleInput2">Tipus</label><br>
+
+                                            <input type="radio"  name="ingatlantip" value="1" >
+                                            <label>Családi ház</label><br>
+                                            <input type="radio"  name="ingatlantip" value="2" >
+                                            <label>Ingatlan</label><br>
+                                            <input type="radio" name="ingatlantip" value="3" >
+                                            <label>Garázs</label>
+                                        </div>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Mégse</button>
+                                        <button type="submit" class="btn btn-primary">Ingatlan felvétele</button>
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     </p>
                 </div>
