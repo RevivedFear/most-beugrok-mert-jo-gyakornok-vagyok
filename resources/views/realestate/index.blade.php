@@ -43,15 +43,12 @@ Created at: 2021.03.24.
                                     <h6 class="card-subtitle mb-2 text-muted"> {{$realestate->address}}</h6>
 
                                     <p class="card-text">
-                                        @empty($realestate->Types)
-                                            empty
-                                        @else
-                                        {{$realestate->Types->name}}
-                                        @endempty
+                                        {{$realestate->description}}
+
                                     </p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item text-bold"><h6>Ár: {{$realestate->price}} </h6></li>
+                                    <li class="list-group-item text-bold"><h6>Ár: {{ number_format($realestate->price, 0, ',', ' ') }} ft</h6></li>
                                 </ul>
 
                                 <div class="d-flex justify-content-between align-items-center">
