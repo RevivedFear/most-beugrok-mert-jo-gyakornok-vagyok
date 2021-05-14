@@ -23,7 +23,7 @@ Created at: 2021.03.24.
                     <h1 class="fw-light">Ingatlanok listája</h1>
                     <p class="lead text-muted">A jelenleg elérhető ingatlanok itt megtekinthetőek.</p>
                     <p>
-                        <a href="#" class="btn btn-primary my-2" data-toggle="modal" data-target="#exampleModal"> ingatlan regisztrálása</a>
+                        <a href="#" class="btn btn-primary my-2" data-toggle="modal" data-target="#exampleModal"><i class="far fa-plus-square"></i> ingatlan regisztrálása</a>
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -102,7 +102,7 @@ Created at: 2021.03.24.
 
                                 <div class="card-body">
                                     <h5 class="card-title"> {{$realestate->name}}</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted"> {{$realestate->address}}</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-map-marker-alt"></i> {{$realestate->address}}</h6>
 
                                     <p class="card-text">
                                         {{$realestate->description}}
@@ -110,15 +110,15 @@ Created at: 2021.03.24.
                                     </p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item text-bold"><h6>Ár: {{ number_format($realestate->price, 0, ',', ' ') }} ft</h6></li>
+                                    <li class="list-group-item text-bold"><h6> <i class="fas fa-coins"></i> {{ number_format($realestate->price, 0, ',', ' ') }} ft</h6></li>
                                 </ul>
 
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a class="btn btn-sm btn-outline-secondaryr" href="/get-real-estate/{{$realestate->id}}" role="button"> Bővebben</a>
-                                        <a class="btn btn-sm btn-danger" href="/delete-real-estate/{{$realestate->id}}" role="button">Törlés</a>
+                                        <a class="btn btn-sm btn-outline-secondaryr" href="/get-real-estate/{{$realestate->id}}" role="button"> <i class="far fa-eye"></i> Bővebben</a>
+                                        <a class="btn btn-sm btn-danger" href="/delete-real-estate/{{$realestate->id}}" role="button"><i class="far fa-trash-alt"></i> Törlés</a>
                                     </div>
-                                    <small class="text-muted"> {{$realestate->created_at}}</small>
+                                    <small class="text-muted"> <i class="far fa-clock"></i> {{$realestate->created_at}}</small>
 
 
                                 </div>
