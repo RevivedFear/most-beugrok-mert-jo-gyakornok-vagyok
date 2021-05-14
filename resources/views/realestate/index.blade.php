@@ -43,8 +43,11 @@ Created at: 2021.03.24.
                                     <h6 class="card-subtitle mb-2 text-muted"> {{$realestate->address}}</h6>
 
                                     <p class="card-text">
-                                        {{$realestate->description}}
-
+                                        @empty($realestate->Types)
+                                            empty
+                                        @else
+                                        {{$realestate->Types->name}}
+                                        @endempty
                                     </p>
                                 </div>
                                 <ul class="list-group list-group-flush">
