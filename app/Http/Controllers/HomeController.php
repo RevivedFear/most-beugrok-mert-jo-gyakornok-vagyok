@@ -39,7 +39,25 @@ class HomeController extends Controller
      */
     public function updateRealEstate(Request $request)
     {
-        $validator = new Validator($request->all(), []);
+        $valid = $request->validate(
+            [
+                'ingatlannev' => 'required|alpha|min:3|max:20',
+                'ingatlanid' => 'required|integer',
+                'ingatlancim' => 'required|min:8|max:100',
+                'ingatlanleiras' =>'required|string|max:500',
+                'ingatlanar' => 'required|integer|',
+                'ingatlankep' => 'required',
+                'ingatlantip' => 'required|integer'
+            ]);
+        $estateRecord = realEstate::find($valid['ingatlanid']);
+        $estateRecord->name = $valid['ingatlannev'];
+        $estateRecord->address = $valid['ingatlancim'];
+        $estateRecord->description = $valid['ingatlanleiras'];
+        $estateRecord->price = $valid['ingatlanar'];
+        $estateRecord->img_uri = $valid['ingatlankep'];
+        $estateRecord->type = $valid['ingatlantip'];
+        $estateRecord->save();
+        return redirect("/");
 
     }
 
@@ -52,5 +70,31 @@ class HomeController extends Controller
         $realEstateById = realEstate::find($id);
         $realEstateById->delete();
         return redirect("/");
+    }
+
+    public function createRealEstate(Request $request)
+    {
+        $valid = $request->validate(
+            [
+                'ingatlannev' => 'required|alpha|min:3|max:20',
+                'ingatlancim' => 'required|min:8|max:100',
+                'ingatlanleiras' =>'required|string|max:500',
+                'ingatlanar' => 'required|integer|',
+                'ingatlankep' => 'required',
+                'ingatlantip' => 'required|integer',
+
+            ]);
+        $estateRecord = new realEstate();
+        $estateRecord->name = $valid['ingatlannev'];
+        $estateRecord->address = $valid['ingatlancim'];
+        $estateRecord->description = $valid['ingatlanleiras'];
+        $estateRecord->price = $valid['ingatlanar'];
+        $estateRecord->img_uri = '/images/' . $valid['ingatlankep'];
+        $estateRecord->type = $valid['ingatlantip'];
+
+        $estateRecord->save();
+        return redirect("/");
+
+
     }
 }

@@ -20,3 +20,5 @@ Route::get('/get-real-estate/{id}', [App\Http\Controllers\HomeController::class,
 Route::post('/update-real-estate', [App\Http\Controllers\HomeController::class, 'updateRealEstate'] );
 
 Route::get('/delete-real-estate/{id}', [App\Http\Controllers\HomeController::class, 'deleteRealEstate'] );
+
+Route::post('/create-real-estate', [App\Http\Controllers\HomeController::class, 'createRealEstate'] );
