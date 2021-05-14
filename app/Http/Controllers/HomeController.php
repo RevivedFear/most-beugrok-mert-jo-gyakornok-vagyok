@@ -49,6 +49,8 @@ class HomeController extends Controller
      */
     public function deleteRealEstate($id)
     {
-
+        $realEstateById = realEstate::find($id);
+        $realEstateById->delete();
+        return redirect("/");
     }
 }
