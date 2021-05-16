@@ -67,9 +67,7 @@ Created at: 2021.03.24.
                                             <input type="text" class="form-control" id="ingatlankep" name="ingatlankep" placeholder="">
                                         </div>
                                         <div class="form-group">
-                                            <label for="formGroupExampleInput2">Tipus</label>
-                                            <label for="formGroupExampleInput2">Tipus</label><br>
-
+                                            <label for="formGroupExampleInput2">Típus</label><br>
                                             <input type="radio"  name="ingatlantip" value="1" >
                                             <label>Családi ház</label><br>
                                             <input type="radio"  name="ingatlantip" value="2" >

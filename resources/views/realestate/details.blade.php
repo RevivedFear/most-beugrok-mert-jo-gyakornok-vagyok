@@ -99,7 +99,7 @@ Created at: 2021.03.24.
                             <input type="text" class="form-control" id="ingatlankep" name="ingatlankep" value="{{$realEstateById->img_uri}}">
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput2">Tipus</label><br>
+                            <label for="formGroupExampleInput2">Típus</label><br>
 
                             <input type="radio"  name="ingatlantip" value="1" @if($realEstateById->type==1) checked @else @endif>
                             <label>Családi ház</label><br>
